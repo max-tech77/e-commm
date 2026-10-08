@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E-Commerce Shopping System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <button class="brand" data-go="home">ShopOOP</button>
+  <nav>
+    <button data-go="products">Products</button>
+    <button data-go="cart">Cart <span id="count">0</span></button>
+  </nav>
+</header>
+<main>
+  <section id="home" class="view">
+    <h1>E-Commerce Shopping Management System</h1>
+    <p>A small shop built on C++ OOP ideas: classes, inheritance, polymorphism and encapsulation.</p>
+    <button class="primary" data-go="products">Browse products</button>
+  </section>
+
+  <section id="products" class="view" hidden>
+    <h2>Products</h2>
+    <div id="grid" class="grid"></div>
+  </section>
+
+  <section id="cart" class="view" hidden>
+    <h2>Your cart</h2>
+    <div id="cartBody"></div>
+  </section>
+
+  <section id="customer" class="view" hidden>
+    <h2>Customer details</h2>
+    <form id="form">
+      <label>Name <input id="cname" required></label>
+      <label>Phone <input id="cphone" required inputmode="numeric" pattern="[0-9]{10}" title="10 digit phone number"></label>
+      <button class="primary" type="submit">Generate bill</button>
+    </form>
+  </section>
+
+  <section id="bill" class="view" hidden>
+    <h2>Bill</h2>
+    <pre id="billText"></pre>
+    <button class="primary" onclick="window.print()">Print bill</button>
+    <button id="newOrder">New order</button>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
